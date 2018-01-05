@@ -1,0 +1,12 @@
+AES Decryption
+
+openssl enc -d -aes-256-cbc -in encrypted.aes -out decrypted.txt -pass pass:napier
+
+Find n and e from rsa public key
+
+openssl rsa -pubin -inform PEM -text -noout < public.key -out modn.txt
+
+>>> from Crypto.PublicKey import RSA
+>>> pem1 = open("1.pem").read()
+>>> k1 = RSA.importKey(pem1)
+>>> print k1.n
